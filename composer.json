@@ -1,0 +1,30 @@
+{
+  "name": "Egroup/Egroup",
+  "description": "Egroup.eu kandidato uzduotis",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Renaldas Zajančkauskas",
+      "email": "renaldas@zajanckauskas.lt"
+    }
+  ],
+  "require-dev": {
+    "laravel/homestead": "^3.0"
+  },
+  "require": {
+    "phpunit/phpunit": "^5.3",
+    "robmorgan/phinx": "^0.5.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Egroup\\": "app/"
+    },
+    "files": ["app/library/helper.php"]
+  },
+  "autoload-dev": {
+    "classmap": [
+      "tests/MyTests.php"
+    ]
+  }
+}
