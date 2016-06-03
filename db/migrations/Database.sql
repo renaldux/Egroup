@@ -24,7 +24,6 @@ CREATE TABLE `modules` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   `parent_id` int(11) DEFAULT NULL,
-  `path` varchar(45) DEFAULT NULL,
   `slug` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name_UNIQUE` (`slug`,`name`),
@@ -32,7 +31,7 @@ CREATE TABLE `modules` (
   CONSTRAINT `modules_parts` FOREIGN KEY (`parent_id`) REFERENCES `modules` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
-INSERT INTO `modules` VALUES (1,'Gardening',NULL,'1\\','gardening'),(2,'Construction',NULL,'2\\','construction'),(3,'Plant Seeds',1,'1\\3\\','plant.seeds'),(4,'Grow Vegetables',1,'1\\4\\','grow.vegetables'),(5,'Build A House',2,'2\\5','build.house'),(6,'Cook',NULL,'6\\','cook'),(7,'Carry Bricks',2,'2\\7\\','carry.bricks'),(8,'Make Soup',6,'6\\8\\','make.soup');
+INSERT INTO `modules` VALUES (1,'Gardening',NULL,'gardening'),(2,'Construction',NULL,'construction'),(3,'Plant Seeds',1,'plant.seeds'),(4,'Grow Vegetables',1,'grow.vegetables'),(5,'Build A House',2,'build.house'),(6,'Cook',NULL,'cook'),(7,'Carry Bricks',2,'carry.bricks'),(8,'Make Soup',6,'make.soup');
 
 DROP TABLE IF EXISTS `user_permissions`;
 CREATE TABLE `user_permissions` (
